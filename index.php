@@ -1,15 +1,16 @@
 <?php
-$title = 'Главная страница - страница обо мне';
-$h1 = 'Информация обо мне';
-$year = 2024;
-$img = 'plane.jpg';
+// 01 - 1
+// 10 - 2
+// 11 - 1
+// 01 - 2
+// 10 - 1
+$x = 3;
+$y = 5;
+$y = $x ^ $y;
+$x = $x ^ $y;
+$y = $x ^ $y;
 
-$content = file_get_contents('main.html');
-$content = str_replace('{{ TITLE }}', $title, $content);
-$content = str_replace('{{ H1 }}', $h1, $content);
-$content = str_replace('{{ YEAR }}', $year, $content);
-$content = str_replace('{{ IMG }}', $img, $content);
-echo $content;
+echo "x = $x и y = $y";
 
 
 
