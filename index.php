@@ -1,10 +1,15 @@
 <?php
 
-$x = null;
+$x = 1;
+
+function inc(&$x)
+{
+    $x++;
+    return $x;
+}
 
 
-if (empty($x)) echo "Переменная х пустая<br>";
-else echo "Переменная х не пустая<br>";
+inc($x);
 
-if (isset($x)) echo "Переменная х существует<br>";
-else echo "Переменная х не сущуствует<br>";
+var_dump($x);
+
