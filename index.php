@@ -1,8 +1,8 @@
 <?php
 
-function factorial($n, $res = '') {
-    if ($n <= 0) return strrev($res);
-    $res .= $n;
+function factorial($n, $res = 1) {
+    if ($n <= 0) return $res;
+    $res *= $n;
     $n--;
     return factorial($n,  $res);
 }
