@@ -1,9 +1,10 @@
 <?php
-declare(strict_types=1);
-function add(int $x, int $y): int
-{
 
-    return $x + $y;
+function factorial($n, $res = '') {
+    if ($n <= 0) return strrev($res);
+    $res .= $n;
+    $n--;
+    return factorial($n,  $res);
 }
 
-echo add("1.2", 2);
+echo factorial(5);
