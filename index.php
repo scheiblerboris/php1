@@ -1,10 +1,9 @@
 <?php
 
-function factorial($n, $res = 1) {
-    if ($n <= 0) return $res;
-    $res *= $n;
-    $n--;
-    return factorial($n,  $res);
+function factorial($n) {
+    if ($n == 0 || $n == 1) return 1;
+    return $n * factorial($n - 1);
+
 }
 
 echo factorial(5);
