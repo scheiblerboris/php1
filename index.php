@@ -1,15 +1,9 @@
 <?php
-
-$x = 1;
-
-function inc(&$x)
+declare(strict_types=1);
+function add(int $x, int $y): int
 {
-    $x++;
-    return $x;
+
+    return $x + $y;
 }
 
-
-inc($x);
-
-var_dump($x);
-
+echo add("1.2", 2);
