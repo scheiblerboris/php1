@@ -1,10 +1,14 @@
 <?php
 
-function renderTemplate($page, $content = '') {
-    ob_start();
-    include $page . ".php";
-    return ob_get_clean();
+function db() {
+    static $db = null;
+    if (is_null($db)) {
+        echo "Подключение к БД<br>";
+        $db = 1;
+    }
+    return $db;
 }
 
-$content = renderTemplate('about', 2000);
-echo renderTemplate('layout', $content);
+echo db();
+echo db();
+echo db();
