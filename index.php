@@ -1,12 +1,8 @@
 <?php
 
-function renderTemplate($page, $menu = '',  $content = '') {
-    ob_start();
-    include $page . ".php";
-    return ob_get_clean();
-}
+$i = 1;
 
-//$content = renderTemplate('about');
-$content = renderTemplate('main');
-$menu = renderTemplate('menu');
-echo renderTemplate('layout', $menu, $content);
+while ($i <= 10) {
+    echo $i;
+    $i++;
+}
