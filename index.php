@@ -1,10 +1,15 @@
-<table border='1' cellspacing='0' cellpadding='3'>
-    <?php for ($i = 0; $i < 10; $i++): ?>
-        <tr>
-            <td><?= $i ?></td>
-            <td>Данные</td>
-        </tr>
-    <?php endfor ?>
-</table>
+<?php
 
+function renderTable($n) {
+    $table = "<table border='1' cellspacing='0' cellpadding='3'>";
+    for ($i = 0; $i < $n; $i++) {
+        $color = ($i & 1) ? 'grey' : 'white';
+        $table .= "<tr style='background: {$color}'><td>{$i}</td><td>Данные</td></tr>";
+    }
+
+    $table .= "</table>";
+    return $table;
+}
+
+echo renderTable(15);
 
