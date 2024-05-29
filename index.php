@@ -1,15 +1,23 @@
 <?php
 
-function renderTable($n) {
-    $table = "<table border='1' cellspacing='0' cellpadding='3'>";
-    for ($i = 0; $i < $n; $i++) {
-        $color = ($i & 1) ? 'grey' : 'white';
-        $table .= "<tr style='background: {$color}'><td>{$i}</td><td>Данные</td></tr>";
+$arr = [
+    [1, 2],
+    [3,
+        ['s', 2 , [
+            2, 3, 4
+        ]]
+    ]
+];
+
+function getArr($arr) {
+    foreach ($arr as $key => $value) {
+        if (is_array($value)) {
+            getArr($value);
+        } else {
+            echo $value;
+        }
     }
 
-    $table .= "</table>";
-    return $table;
 }
 
-echo renderTable(15);
-
+getArr($arr);
