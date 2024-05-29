@@ -1,23 +1,28 @@
 <?php
 
-$arr = [
-    [1, 2],
-    [3,
-        ['s', 2 , [
-            2, 3, 4
-        ]]
-    ]
+$basket = [
+    [
+        'name' => 'Кофеварка',
+        'quantity' => 1,
+        'price' => 100
+    ],
+    [
+        'name' => 'Блендер',
+        'quantity' => 2,
+        'price' => 30
+    ],
+    'sum' => function() {
+        echo 'считаю сумму';
+    }
 ];
 
-function getArr($arr) {
-    foreach ($arr as $key => $value) {
-        if (is_array($value)) {
-            getArr($value);
-        } else {
-            echo $value;
-        }
-    }
+$basket['sum']();
 
+function total($arr) {
+    $sum = 0;
+    foreach ($arr as $item)
+        $sum += $item['quantity'] * $item['price'];
+    return $sum;
 }
 
-getArr($arr);
+echo total($basket);
