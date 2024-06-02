@@ -1,9 +1,5 @@
 <?php
-$catalog = [
-    'img' => 'img/pizza.jpeg',
-    'name' => 'Пицца',
-    ''
-];
+var_dump($catalog);
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,8 +11,6 @@ $catalog = [
     <title>Document</title>
 </head>
 <body>
-<?php include 'menu.php' ?>
-
 <h2>Каталог</h2>
 <div>
     <div>
